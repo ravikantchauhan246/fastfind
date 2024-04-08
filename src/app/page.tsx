@@ -20,10 +20,9 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       if (!input) return setSearchResults(undefined)
-      // once deployed, prefix this with your cloudflare worker url
-      // i.e.: https://<name>.<account-name>.workers.dev/api/search?q=${input}
+      
 
-      const res = await fetch(`/api/search?q=${input}`)
+      const res = await fetch(`https://fastfind.ravikantc.workers.dev/api/search?q=${input}`)
       const data = (await res.json()) as { results: string[]; duration: number }
       setSearchResults(data)
     }
@@ -32,11 +31,11 @@ export default function Home() {
   }, [input])
 
   return (
-    <main className='h-screen w-screen grainy'>
+    <main className='h-screen w-screen bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900'>
       <div className='flex flex-col gap-6 items-center pt-32 duration-500 animate-in animate fade-in-5 slide-in-from-bottom-2.5'>
-        <h1 className='text-5xl tracking-tight font-bold'>FastFind 🚅 </h1>
+        <h1 className='text-5xl tracking-tight font-bold'>FastFind </h1>
         <p className='text-zinc-600 text-lg max-w-prose text-center'>
-          A high-performance API built. <br />{' '}
+          A high-performance API<br />{' '}
           Type a query below and get your results in miliseconds.
         </p>
 

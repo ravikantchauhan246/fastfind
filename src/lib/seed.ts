@@ -1,9 +1,9 @@
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
-  url: 'https://pure-earwig-42777.upstash.io',
-  token: 'AacZASQgZTc3ZTZjYmQtNTAzYS00YTI3LWEwMmMtZmNkMjc2NTExMDQwYzQ4Yjc4N2E3MmQ4NDEzN2I2MzZjOGU3MGUzOWRjNzU=',
-})
+	url: process.env.UPSTASH_REDIS_REST_URL!,
+	token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  })
 
 const countryList = [
 	"Afghanistan",
@@ -259,7 +259,8 @@ const countryList = [
 
 countryList.forEach((country)=>{
   const term = country.toUpperCase();
-  const terms: {score:0,member:string}[]=[]
+  const terms: {score:0; member:string}[]=[]
+  
   for(let i=0;i<term.length;i++){
       terms.push({score:0,member:term.substring(0,i)})
   }
