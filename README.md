@@ -1,6 +1,6 @@
 <div>
  <h1>FastFind Project</h1>
- <p>FastFind is a high-performance API designed to provide rapid search results. Built with Next.js and TailwindCSS, it leverages Upstash Redis for data storage and retrieval, ensuring quick response times for search queries.</p>
+ <p>FastFind is a high-performance API designed to provide rapid search results. Built with Next.js,Hono and TailwindCSS, it leverages Upstash Redis for data storage and retrieval, ensuring quick response times for search queries.</p>
  
  <h2>Features</h2>
  <ul>
