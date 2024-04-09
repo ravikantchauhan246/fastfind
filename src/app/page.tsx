@@ -31,15 +31,15 @@ export default function Home() {
   }, [input])
 
   return (
-    <main className='h-screen w-screen bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900'>
-      <div className='flex flex-col gap-6 items-center pt-32 duration-500 animate-in animate fade-in-5 slide-in-from-bottom-2.5'>
+    <main className='h-screen w-screen bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 p-4 md:p-8'>
+      <div className='flex flex-col gap-4  items-center pt-32  duration-500 animate-in animate fade-in-5 slide-in-from-bottom-2.5'>
         <h1 className='text-5xl tracking-tight font-bold'>FastFind </h1>
         <p className='text-zinc-600 text-lg max-w-prose text-center'>
           A high-performance API<br />{' '}
           Type a query below and get your results in miliseconds.
         </p>
 
-        <div className='max-w-md w-full'>
+        <div className='max-w-md sm:max-w-md w-full'>
           <Command>
             <CommandInput
               value={input}
